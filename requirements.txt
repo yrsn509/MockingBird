@@ -17,7 +17,7 @@ webrtcvad; platform_system != "Windows"
 pypinyin
 flask
 flask_wtf
-flask_cors
+flask_cors==3.0.10
 gevent==21.8.0
 flask_restx
 tensorboard
