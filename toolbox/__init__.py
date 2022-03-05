@@ -43,6 +43,7 @@ recognized_datasets = [
     "aidatatang_200zh/corpus/test",
     "aishell3/test/wav",
     "magicdata/train",
+    "aidatatang_200zh/corpus/train"
 ]
 
 #Maximum of generated wavs to keep on memory

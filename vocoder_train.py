@@ -61,6 +61,8 @@ if __name__ == "__main__":
     # Process the arguments
     if args.vocoder_type == "wavernn":
         # Run the training wavernn
+        delattr(args,'vocoder_type')
+        delattr(args,'config')
         train(**vars(args))
     elif args.vocoder_type == "hifigan":
         with open(args.config) as f:

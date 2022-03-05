@@ -49,8 +49,13 @@
 * `-n {number}` 指定并行数，CPU 11770k + 32GB实测10没有问题
 > 假如你下载的 `aidatatang_200zh`文件放在D盘，`train`文件路径为 `D:\data\aidatatang_200zh\corpus\train` , 你的`datasets_root`就是 `D:\data\`
 
+
+`python pre.py d:\asoul -d aidatatang_200zh -n 6
+
 * 训练合成器：
 `python synthesizer_train.py mandarin <datasets_root>/SV2TTS/synthesizer`
+
+`python synthesizer_train.py B-SPIRIT D:/ASOUL/SV2TTS/synthesizer`
 
 * 当您在训练文件夹 *synthesizer/saved_models/* 中看到注意线显示和损失满足您的需要时，请转到`启动程序`一步。
 
@@ -70,6 +75,10 @@
 `python vocoder_preprocess.py <datasets_root> -m <synthesizer_model_path>`
 > `<datasets_root>`替换为你的数据集目录，`<synthesizer_model_path>`替换为一个你最好的synthesizer模型目录，例如 *sythensizer\saved_mode\xxx*
 
+#python vocoder_preprocess.py d:\asoul -m synthesizer\saved_models\eileen
+#python vocoder_train.py eileen d:\asoul
+python vocoder_train.py mandarin d:\asoul
+python vocoder_train.py A-SOUL d:\asoul
 
 * 训练wavernn声码器:
 `python vocoder_train.py <trainid> <datasets_root>`
